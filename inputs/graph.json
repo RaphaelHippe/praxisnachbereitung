@@ -1,0 +1,98 @@
+{
+  "0": {
+    "name": "START",
+    "duration": 0,
+    "predecessor": [],
+    "successor": [2],
+    "maxWaitingTime": [],
+    "minWaitingTime": []
+  },
+  "1": {
+    "name": "Fundamente Gießen",
+    "duration": 2,
+    "predecessor": [2],
+    "successor": [3, 4],
+    "maxWaitingTime": [10000],
+    "minWaitingTime": [0]
+  },
+  "2": {
+    "name": "Fundamente Ausheben",
+    "duration": 1,
+    "predecessor": [0],
+    "successor": [1],
+    "maxWaitingTime": [10000],
+    "minWaitingTime": [0]
+  },
+  "3": {
+    "name": "Erdleitungen",
+    "duration": 2,
+    "predecessor": [1],
+    "successor": [6],
+    "maxWaitingTime": [10000],
+    "minWaitingTime": [-1]
+  },
+  "4": {
+    "name": "Mauern",
+    "duration": 3,
+    "predecessor": [1],
+    "successor": [5, 6, 9],
+    "maxWaitingTime": [10000],
+    "minWaitingTime": [1]
+  },
+  "5": {
+    "name": "Dach",
+    "duration": 2,
+    "predecessor": [4],
+    "successor": [7],
+    "maxWaitingTime": [2],
+    "minWaitingTime": [0]
+  },
+  "6": {
+    "name": "Boden",
+    "duration": 3,
+    "predecessor": [3, 4],
+    "successor": [8],
+    "maxWaitingTime": [10000, 10000],
+    "minWaitingTime": [0, 1]
+  },
+  "7": {
+    "name": "Tor",
+    "duration": 1,
+    "predecessor": [5],
+    "successor": [8, 9],
+    "maxWaitingTime": [10000],
+    "minWaitingTime": [0]
+  },
+  "8": {
+    "name": "Innenputz",
+    "duration": 2,
+    "predecessor": [6, 7],
+    "successor": [10],
+    "maxWaitingTime": [10000, 10000],
+    "minWaitingTime": [1, 0]
+  },
+  "9": {
+    "name": "Außenputz",
+    "duration": 2,
+    "predecessor": [4, 7],
+    "successor": [10],
+    "maxWaitingTime": [4, 10000],
+    "minWaitingTime": [0, 0]
+  },
+  "10": {
+    "name": "Anstrich",
+    "duration": 1,
+    "predecessor": [8, 9],
+    "successor": [11],
+    "maxWaitingTime": [10000, 10000],
+    "minWaitingTime": [0]
+  },
+  "11": {
+    "name": "ENDE",
+    "duration": 0,
+    "predecessor": [10],
+    "successor": [],
+    "maxWaitingTime": [10000],
+    "minWaitingTime": [0]
+  }
+}
