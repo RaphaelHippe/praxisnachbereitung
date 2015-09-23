@@ -85,7 +85,7 @@
     "predecessor": [8, 9],
     "successor": [11],
     "maxWaitingTime": [10000, 10000],
-    "minWaitingTime": [0]
+    "minWaitingTime": [0,0]
   },
   "11": {
     "name": "ENDE",

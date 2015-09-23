@@ -1,0 +1,66 @@
+{
+  "0": {
+    "name": "START",
+    "duration": 0,
+    "predecessor": [],
+    "successor": [1,4,6],
+    "maxWaitingTime": [],
+    "minWaitingTime": []
+  },
+  "1": {
+    "name": "Estrich",
+    "duration": 0.5,
+    "predecessor": [0],
+    "successor": [2, 3],
+    "maxWaitingTime": [0],
+    "minWaitingTime": [0]
+  },
+  "2": {
+    "name": "Elektro",
+    "duration": 1.5,
+    "predecessor": [1],
+    "successor": [4],
+    "maxWaitingTime": [10000],
+    "minWaitingTime": [0.5]
+  },
+  "3": {
+    "name": "Klempner",
+    "duration": 1,
+    "predecessor": [1],
+    "successor": [4,6],
+    "maxWaitingTime": [2],
+    "minWaitingTime": [0.5]
+  },
+  "4": {
+    "name": "Maler",
+    "duration": 1.5,
+    "predecessor": [2,3,0],
+    "successor": [5],
+    "maxWaitingTime": [10000, 10000, 3.5],
+    "minWaitingTime": [0,0,2]
+  },
+  "5": {
+    "name": "Boden",
+    "duration": 0.5,
+    "predecessor": [4],
+    "successor": [6],
+    "maxWaitingTime": [0],
+    "minWaitingTime": [0]
+  },
+  "6": {
+    "name": "Möbel und Geräte",
+    "duration": 2,
+    "predecessor": [5, 0],
+    "successor": [7],
+    "maxWaitingTime": [10000, 10000],
+    "minWaitingTime": [0, 4]
+  },
+  "7": {
+    "name": "ENDE",
+    "duration": 0,
+    "predecessor": [6],
+    "successor": [],
+    "maxWaitingTime": [10000],
+    "minWaitingTime": [0]
+  }
+}

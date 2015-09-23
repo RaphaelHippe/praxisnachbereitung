@@ -16,7 +16,7 @@ var waitingTime = 0;
 
 function init(graph) {
   mainObj = graph;
-  console.log(graph);
+  // console.log(graph);
   Object.keys(graph).forEach(function(key, index) {
     if (index === 0) {
       mpmTimeCalculation[key] = {
@@ -42,11 +42,10 @@ function mpmTimeCalc(graph) {
   Object.keys(graph).forEach(function(key, index) {
     mpmTimeCalculation[key].faz = getHighestValue(mpmTimeCalculation[key]);
   });
-  console.log(mpmTimeCalculation);
+  return mpmTimeCalculation;
 }
 
 function getWaitingTime(node, index) {
-  // console.log('NODE', node);
   return node.minWaitingTime[index];
 }
 
@@ -54,40 +53,41 @@ function magic() {
   var currentKey;
   console.log('Q', q);
   iter = q.shift();
+  inQ[iter] = false;
   faz = getHighestValue(mpmTimeCalculation[iter]);
   durationOne = mainObj[iter].duration;
   mainObj[iter].successor.forEach(function(s, index) {
     var result = {};
     currentKey = s;
-    waitingTime = getWaitingTime(mainObj[s], index);
-    console.log('iter', iter, 'successor', s);
-    console.log('faz', faz, 'durationOne', durationOne, 'waitingTime', waitingTime);
+    waitingTime = getWaitingTime(mainObj[s.toString()], mainObj[s.toString()].predecessor.indexOf(parseInt(iter)));
+    // console.log('iter', iter, 'successor', s);
+    // console.log('faz', faz, 'durationOne', durationOne, 'waitingTime', waitingTime);
     result[s] = faz + durationOne + waitingTime;
-    mpmTimeCalculation[s][iter] = result[s];
-    if (checkIfQ(result)) {
+    if (checkIfQ(result, currentKey)) {
       q.push(currentKey);
       inQ[currentKey] = true;
     }
+    mpmTimeCalculation[s][iter] = result[s];
   });
 }
 
 
-function checkIfQ(result) {
+function checkIfQ(result, myCurrentKey) {
   var max = false;
+  var theKey;
   Object.keys(result).forEach(function(key) {
-    if (!inQ[key]) {
-      Object.keys(mpmTimeCalculation[key]).forEach(function(otherKey) {
-        if (result[key] > mpmTimeCalculation[key][otherKey]) {
-          max = true;
-        }
-      });
-    }
+    theKey = key;
   });
+  if (!inQ[theKey] && result[theKey] > getHighestValue(mpmTimeCalculation[theKey])) {
+    max = true;
+  }
   return max;
 }
 
 
 function getHighestValue(node) {
+
+
   var max = -10000;
   Object.keys(node).forEach(function(key) {
     if (node[key] > max) {
