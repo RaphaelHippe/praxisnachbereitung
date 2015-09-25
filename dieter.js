@@ -1,4 +1,4 @@
-var mpmTimeCalcJson = require('./outputs/mpmTimeCalc.json');
+var mpmTimeCalcJson;
 module.exports = dieter;
 
 
@@ -15,7 +15,8 @@ var saz;
 var durationOne = 0;
 var waitingTime = 0;
 
-function dieter(graph) {
+function dieter(graph, myMpmTimeCalcJson) {
+  mpmTimeCalcJson = myMpmTimeCalcJson;
   init(graph);
   while (q.length ) {
     magic();
