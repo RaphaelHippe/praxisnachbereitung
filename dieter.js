@@ -18,7 +18,7 @@ var waitingTime = 0;
 function dieter(graph, myMpmTimeCalcJson) {
   mpmTimeCalcJson = myMpmTimeCalcJson;
   init(graph);
-  while (q.length ) {
+  while (q.length) {
     magic();
   }
   Object.keys(graph).forEach(function(key, index) {
@@ -73,7 +73,14 @@ function magic() {
       q.push(currentKey);
       inQ[currentKey] = true;
     }
-    dieterTable[ps][iter] = result[ps];
+    var iterKey = iter;
+    if (dieterTable[ps][iterKey]) {
+      iterKey = iter + '_new';
+      if (dieterTable[ps][iterKey]) {
+        iterKey = iter + '_new_new';
+      }
+    }
+    dieterTable[ps][iterKey] = result[ps];
   });
 }
 
@@ -85,12 +92,12 @@ function checkIfQ(result, myCurrentKey) {
     theKey = key;
   });
   // console.log('inQ', inQ[theKey], 'indexOf', q.indexOf(myCurrentKey));
-      // console.log('vergleich', result[theKey], getLowestValue(dieterTable[theKey]));
-      if (!inQ[theKey] && result[theKey] < getLowestValue(dieterTable[theKey])) {
-        min = true;
-      }
-    // Object.keys(dieterTable[theKey]).forEach(function(otherKey) {
-    // });
+  // console.log('vergleich', result[theKey], getLowestValue(dieterTable[theKey]));
+  if (!inQ[theKey] && result[theKey] < getLowestValue(dieterTable[theKey])) {
+    min = true;
+  }
+  // Object.keys(dieterTable[theKey]).forEach(function(otherKey) {
+  // });
   return min;
 }
 
