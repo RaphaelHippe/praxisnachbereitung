@@ -1,0 +1,98 @@
+{
+  "0": {
+    "name": "START",
+    "duration": 0,
+    "predecessor": [],
+    "successor": [1],
+    "maxWaitingTime": [],
+    "minWaitingTime": []
+  },
+  "1": {
+    "name": "Zugang",
+    "duration": 4,
+    "predecessor": [0],
+    "successor": [2],
+    "maxWaitingTime": [10000],
+    "minWaitingTime": [0]
+  },
+  "2": {
+    "name": "Elektro und Möbel",
+    "duration": 15,
+    "predecessor": [1],
+    "successor": [3, 4, 5, 7],
+    "maxWaitingTime": [10000],
+    "minWaitingTime": [0]
+  },
+  "3": {
+    "name": "Fliesen",
+    "duration": 10,
+    "predecessor": [2],
+    "successor": [6, 7],
+    "maxWaitingTime": [10000],
+    "minWaitingTime": [0]
+  },
+  "4": {
+    "name": "Verkabelung",
+    "duration": 10,
+    "predecessor": [2],
+    "successor": [6, 7],
+    "maxWaitingTime": [10000],
+    "minWaitingTime": [0]
+  },
+  "5": {
+    "name": "Küchenausstattung",
+    "duration": 5,
+    "predecessor": [2],
+    "successor": [6, 7],
+    "maxWaitingTime": [10000],
+    "minWaitingTime": [0]
+  },
+  "6": {
+    "name": "Badewanne",
+    "duration": 12,
+    "predecessor": [3, 4, 5],
+    "successor": [7],
+    "maxWaitingTime": [6, 6, 6],
+    "minWaitingTime": [0, 0, 0]
+  },
+  "7": {
+    "name": "Lastwagen",
+    "duration": 2,
+    "predecessor": [2, 3, 4, 5, 6],
+    "successor": [8],
+    "maxWaitingTime": [10000, 10000, 10000, 10000, 10000],
+    "minWaitingTime": [0, 0, 0 ,0 ,0]
+  },
+  "8": {
+    "name": "Beladung",
+    "duration": 13,
+    "predecessor": [7],
+    "successor": [9, 10],
+    "maxWaitingTime": [10000],
+    "minWaitingTime": [0]
+  },
+  "9": {
+    "name": "Flucht",
+    "duration": 2,
+    "predecessor": [8],
+    "successor": [11],
+    "maxWaitingTime": [10000],
+    "minWaitingTime": [0]
+  },
+  "10": {
+    "name": "Regenrinne",
+    "duration": 1,
+    "predecessor": [8],
+    "successor": [11],
+    "maxWaitingTime": [10000],
+    "minWaitingTime": [0]
+  },
+  "11": {
+    "name": "ENDE",
+    "duration": 0,
+    "predecessor": [1, 9, 10],
+    "successor": [],
+    "maxWaitingTime": [80, 10000, 10000],
+    "minWaitingTime": [0, 0, 0]
+  }
+}

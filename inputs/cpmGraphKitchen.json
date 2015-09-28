@@ -1,0 +1,37 @@
+{
+  "0": {
+    "successor": [1, 3, 4],
+    "predecessor": [],
+    "duration": [0.5, 2, 4]
+  },
+  "1": {
+    "successor": [2, 3],
+    "predecessor": [0],
+    "duration": [1.5, 1]
+  },
+  "2": {
+    "successor": [4],
+    "predecessor": [1],
+    "duration": [1.5]
+  },
+  "3": {
+    "successor": [4],
+    "predecessor": [0, 1],
+    "duration": [1.5]
+  },
+  "4": {
+    "successor": [5],
+    "predecessor": [0, 3],
+    "duration": [0.5]
+  },
+  "5": {
+    "successor": [6],
+    "predecessor": [4],
+    "duration": [2]
+  },
+  "6": {
+    "successor": [],
+    "predecessor": [5],
+    "duration": []
+  }
+}

@@ -11,7 +11,7 @@
     "name": "Estrich",
     "duration": 0.5,
     "predecessor": [0, 3],
-    "successor": [2, 3],
+    "successor": [0, 2, 3],
     "maxWaitingTime": [0],
     "minWaitingTime": [0, -3.5]
   },
@@ -27,7 +27,7 @@
     "name": "Klempner",
     "duration": 1,
     "predecessor": [1],
-    "successor": [4, 6],
+    "successor": [1, 4],
     "maxWaitingTime": [2],
     "minWaitingTime": [0.5]
   },
@@ -35,7 +35,7 @@
     "name": "Maler",
     "duration": 1.5,
     "predecessor": [2, 3, 0, 5],
-    "successor": [5],
+    "successor": [0, 5],
     "maxWaitingTime": [10000, 10000, 3.5],
     "minWaitingTime": [0, 0, 2, -2]
   },
@@ -43,7 +43,7 @@
     "name": "Boden",
     "duration": 0.5,
     "predecessor": [4],
-    "successor": [6],
+    "successor": [4, 6],
     "maxWaitingTime": [0],
     "minWaitingTime": [0]
   },
