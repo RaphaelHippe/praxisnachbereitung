@@ -79,6 +79,9 @@ function magic() {
       if (dieterTable[ps][iterKey]) {
         iterKey = iter + '_new_new';
       }
+      if (dieterTable[ps][iterKey]) {
+        iterKey = iter + '_new_new_new';
+      }
     }
     dieterTable[ps][iterKey] = result[ps];
   });

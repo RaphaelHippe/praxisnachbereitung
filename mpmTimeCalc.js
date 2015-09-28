@@ -67,7 +67,17 @@ function magic() {
       q.push(currentKey);
       inQ[currentKey] = true;
     }
-    mpmTimeCalculation[s][iter] = result[s];
+    var iterKey = iter;
+    if (mpmTimeCalculation[s][iterKey]) {
+      iterKey = iter + '_new';
+      if (mpmTimeCalculation[s][iterKey]) {
+        iterKey = iter + '_new_new';
+      }
+      if (mpmTimeCalculation[s][iterKey]) {
+        iterKey = iter + '_new_new_new';
+      }
+    }
+    mpmTimeCalculation[s][iterKey] = result[s];
   });
 }
 
