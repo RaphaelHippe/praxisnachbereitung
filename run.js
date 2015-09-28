@@ -2,7 +2,7 @@
 // var graph = require('./inputs/graph.json');
 // var graph = require('./outputs/onlyMinDemontage.json');
 
-var cpmGraph = require('./inputs/cpmGraphKitchen.json');
+var cpmGraph = require('./inputs/cpmGraphDemontage.json');
 
 var output = require('./output.js');
 
@@ -15,8 +15,8 @@ var calcPuffer = require('./pufferCalc.js');
 // var dieter = require('./dieter.js');
 // var mpmTimeCalcJson = require('./outputs/mpmTimeCalcDemontage.json');
 
-var gMinusFile = require('./outputs/gMinusKitchen.json');
-var gPlusFile = require('./outputs/gPlusKitchen.json');
+var gMinusFile = require('./outputs/gMinusDemontage.json');
+var gPlusFile = require('./outputs/gPlusDemontage.json');
 
 // var gMinus = require('./gMinus.js');
 // var gPlus = require('./gPlus.js');
@@ -28,10 +28,10 @@ var gPlusFile = require('./outputs/gPlusKitchen.json');
 // var mpmTimeCalcPath = 'outputs/mpmTimeCalcDemontage.json';
 // var dieterTable = 'outputs/dieterTableDemontage.json';
 
-// var gMinusOut = 'outputs/gMinusKitchen.json';
-// var gPlusOut = 'outputs/gPlusKitchen.json';
+// var gMinusOut = 'outputs/gMinusDemontage.json';
+// var gPlusOut = 'outputs/gPlusDemontage.json';
 
-var pufferOut = 'outputs/pufferKitchen.json';
+var pufferOut = 'outputs/pufferDemontage.json';
 
 // output(onlyMin, JSON.stringify(onlyMinTable(graph)));
 // output(mpmTimeCalcPath, JSON.stringify(mpmTimeCalc(graph)));
