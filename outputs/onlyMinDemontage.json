@@ -13,7 +13,7 @@
     "predecessor": [0, 11],
     "successor": [2, 11],
     "maxWaitingTime": [10000],
-    "minWaitingTime": [0, -78]
+    "minWaitingTime": [0, -84]
   },
   "2": {
     "name": "Elektro und Möbel",
@@ -92,7 +92,7 @@
     "duration": 0,
     "predecessor": [1, 9, 10],
     "successor": [1],
-    "maxWaitingTime": [74, 10000, 10000],
+    "maxWaitingTime": [80, 10000, 10000],
     "minWaitingTime": [0, 0, 0]
   }
 }

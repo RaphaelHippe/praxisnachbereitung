@@ -92,7 +92,7 @@
     "duration": 0,
     "predecessor": [1, 9, 10],
     "successor": [],
-    "maxWaitingTime": [74, 10000, 10000],
+    "maxWaitingTime": [80, 10000, 10000],
     "minWaitingTime": [0, 0, 0]
   }
 }
